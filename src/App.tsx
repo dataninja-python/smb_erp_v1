@@ -28,14 +28,7 @@ const Spinner = () => {
           <ColorModeSwitcher justifySelf="flex-end" />
           <VStack spacing={8}>
             <Logo h="40vmin" pointerEvents="none" />
-            <Link
-              as={RouteLink}
-              color="teal.500"
-              to="/home"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link as={RouteLink} color="teal.500" to="/home" fontSize="2xl">
               To Home
             </Link>
           </VStack>
@@ -47,12 +40,12 @@ const Spinner = () => {
 
 const pageRoutes = [
   {
-    page_id: 0,
+    pageId: 0,
     path: "/",
     element: <Spinner />,
   },
   {
-    page_id: 1,
+    pageId: 1,
     path: "/home",
     element: <Home />,
   },
@@ -64,11 +57,7 @@ export const App = () => (
       <Outlet />
       <Routes>
         {pageRoutes.map((route) => (
-          <Route
-            key={route.page_id}
-            path={route.path}
-            element={route.element}
-          />
+          <Route key={route.pageId} path={route.path} element={route.element} />
         ))}
       </Routes>
     </ChakraProvider>
